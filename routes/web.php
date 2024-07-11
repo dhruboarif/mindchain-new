@@ -45,6 +45,9 @@ Route::get('/runfinacron', function() {
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::get('/signup', function () {
+    return view('auth.register');
+});
 
 // Route::with(['web', 'csrf'])->get('/', function () {
 //     return view('auth.login');
