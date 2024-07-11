@@ -117,7 +117,7 @@ svg{
 
 }
 
- 
+
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
     .bmind-page-staus .bmind-card .card-box img {
@@ -226,7 +226,7 @@ svg{
     margin-left: 30%;
 }
 }
- 
+
 /* small mobile :320px. */
 @media (max-width: 767px) {
 .container {
@@ -281,7 +281,7 @@ svg{
     float: none;
 	text-align:left;
     position: relative;
-    left: 78px;
+    left: 28px;
     padding: 8px 0;
 }
 .admin{
@@ -291,7 +291,7 @@ svg{
     display: inline;
 }
 .header-right-info ul.header-right-menu li .author-log {
-    margin-left: 15px !important;
+    /* margin-left: 15px !important; */
 }
 st-wallet-list .row{
     margin-right: -18px !important;
@@ -479,12 +479,12 @@ st-wallet-list .row{
 .mind-live-price .row{
  /* display: flex; */
  width: 100%;
- 
+
 }
 .mind-live-price .mind-sec{
     margin: auto;
     text-align: center !important;
-    
+
    }
 .mind-live-price .sdevice{
     border-left:1px solid #919191;
@@ -516,7 +516,7 @@ st-wallet-list .row{
         text-align: left !important;
         align-items: start !important;
         float: left !important;
-      } 
+      }
 .page-top-section.col-sm-6{
     width: 100% !important;
 }
@@ -610,7 +610,7 @@ st-wallet-list .row{
     margin-top: 0;
 }
 }
- 
+
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .container {width:450px}
@@ -656,4 +656,4 @@ st-wallet-list .row{
         height: 350px;
     }
 }
- 
+

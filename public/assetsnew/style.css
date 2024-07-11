@@ -71,7 +71,9 @@ padding: 0
   font-weight: normal;
   font-style: normal;
 }
-
+.changeValue{
+    margin-left: 5px;
+}
 /*----------------------------------------*/
 /*  8. Menu collapse Area
 /*----------------------------------------*/
@@ -188,7 +190,7 @@ ul.dtl-social li a{
 }
 #sidebar.active .sidebar-header .main-logo{
 	display:none;
-    
+
 }
 .sidebar-title{
     margin-top: 5px !important;
@@ -359,12 +361,12 @@ ul.dtl-social li a{
 	background:#2b2a2a;
 }
 .header-top-menu .navbar-nav>li .dropdown-menu{
-	border: 0px solid #ccc; 
+	border: 0px solid #ccc;
     border: 0px solid rgba(0,0,0,.15);
-	background-color: #303030;	
+	background-color: #303030;
 }
 .header-right-info .navbar-nav>li .dropdown-menu{
-	border: 0px solid #ccc; 
+	border: 0px solid #ccc;
     border: 0px solid rgba(0,0,0,.15);
 }
 .header-top-menu .nav>li>a:focus, .header-top-menu .nav>li>a:hover, .header-top-menu .nav>li>a:active {
@@ -488,6 +490,7 @@ ul.dtl-social li a{
 .header-right-info ul.header-right-menu li.open .author-message-top, .header-right-info ul.header-right-menu li.open .notification-author, .header-right-info ul.header-right-menu li.open .author-log{
    opacity:1;
    top:165%;
+   left: -15px;
    transition: all 0.5s ease 0s;
    visibility:visible;
 }
@@ -1027,7 +1030,7 @@ ul.breadcome-menu li a:hover{
     border-bottom: 4px solid #635BFE;
 }
 
-.mind-sec, .bmind-sec{  
+.mind-sec, .bmind-sec{
 justify-content: space-between;
  display: flex;
  margin: 0 16px;
@@ -1043,7 +1046,7 @@ text-align: start;
 .mind-sec .pricem span{
     margin-left: 8px;
     font-size: 11px;
-    
+
     }
 .ot-wallet .wallet-amount .mind-sub-wallet .bmind, .ot-wallet .wallet-amount .mind-sub-wallet .musd, .ot-wallet .wallet-amount .mind-sub-wallet .usdt{
 font-size: 12px;
@@ -1053,7 +1056,7 @@ text-align: left;
 color: #CECECE;
 margin-top: 1.5px !important;
 margin-left: 20px;
-    
+
 }
 .ot-wallet .wallet-amount .mind-sub-wallet{
 font-size: 20px;
@@ -1231,7 +1234,7 @@ ul.cus-product-sl-rp li h5{
 	font-size:20px;
 	color:#fff;
 	text-transform: capitalize;
-} 
+}
 .cus-gh-hd-pro h2{
 	font-size:20px;
 	color:#fff;
@@ -1341,7 +1344,7 @@ ul.cus-product-sl-rp li h5{
 }
 .admin-content .prof-url{
     margin-left: 20px;
-    font-size: 14px !important; 
+    font-size: 14px !important;
     font-weight: 500;
 }
 .dbprice{
@@ -1359,7 +1362,7 @@ margin-left: 10px;
 .admin-content .prof-url .text-red{
     margin-left: 4px;
     margin-top: 0!important;
-} 
+}
 .admin-content .price-title{
 font-size: 18px;
 font-weight: 600;
@@ -1635,7 +1638,7 @@ table thead{
 table th:first-child{
     border-radius:15px 0 0 0;
   }
-  
+
   table th:last-child{
     border-radius:0 15px 0 0;
   }
@@ -1663,7 +1666,7 @@ table th:first-child{
     width: 60px;
 }
 .custom-pagination{
-    
+
     float: right;
 }
 
@@ -1815,7 +1818,7 @@ ul.tab-custon-design, ul.tab-review-design {
 }
 .rating > input:checked ~ label, .rating:not(:checked) > label:hover, .rating:not(:checked) > label:hover ~ label {
   color: #24caa1;
-} 
+}
 .rating > input:checked + label:hover, .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, .rating > input:checked ~ label:hover ~ label {
   color: #24caa1;
@@ -1941,7 +1944,7 @@ ul#single-product-tab li{
 	background:#f7941d;
 }
 .single-pro-size span, .color-quality-details span {
-  display: inline-block; 
+  display: inline-block;
   font-weight: 300;
   height: 25px;
   line-height: 25px;
@@ -2040,7 +2043,7 @@ ul#single-product-tab li{
 	color:#fff;
 }
 .review-content-section .input-group input[type="text"]{
-	
+
 }
 .review-content-section .input-group input::-webkit-input-placeholder, .product-delivary .form-group input::-webkit-input-placeholder, .form-group input::-webkit-input-placeholder, .review-content-section input::-webkit-input-placeholder {
     color:#fff;
@@ -4099,7 +4102,7 @@ th.fc-day-header.fc-widget-header {
 	border-color: #152036;
 }
 .review-pro-edt button:hover, .review-pro-edt button:focus, .review-pro-edt button:active{
-	background:#152036 !important; 
+	background:#152036 !important;
 	border-color: #152036 !important;
 	outline:none;
 }
@@ -4268,6 +4271,19 @@ th.fc-day-header.fc-widget-header {
     display: flex;
     justify-content: space-between;
 }
+.valueSec p{
+    margin-bottom: 5px !important;
+}
+.buyMindWallet .valueSec input{
+    width: 40%;
+    padding: 5px;
+    margin-right: 20px;
+    padding-left: 10px !important;
+    border: none;
+}
+.buyMindWallet .valueSec input::placeholder{
+    padding-left: 10px !important;
+}
 .buyMindWallet .valueSec .col-sm-6:first-child{
  margin-right: 20px;
 }
@@ -4373,7 +4389,7 @@ th.fc-day-header.fc-widget-header {
 }
 .role .rank-icon img{
     height: 80px;
-    
+
 }
 .profile-info{
     display: flex;
@@ -4764,7 +4780,7 @@ th.fc-day-header.fc-widget-header {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    
+
     border-top: none;
 }
 .all-transection .breadcome-price-section {
@@ -4833,9 +4849,9 @@ th.fc-day-header.fc-widget-header {
     width: 100%;
     padding-right: 30px;
     box-sizing: border-box;
-    -webkit-appearance: none; 
-    -moz-appearance: textfield; 
-    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
     cursor: pointer;
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -4858,12 +4874,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: 10px;
 }
 .kids-page-staus .data-title{
-    text-align: end;  
-    align-items: end; 
+    text-align: end;
+    align-items: end;
     margin-bottom: 30px;
 }
 .kids-page-staus .data-title span{
-    color: #ff971d; 
+    color: #ff971d;
     font-size: 18px;
     font-weight: 300;
     padding-left: 6px;

@@ -115,25 +115,17 @@
         22 => 'REDIS_HOST',
         23 => 'REDIS_PASSWORD',
         24 => 'REDIS_PORT',
-        25 => 'MAIL_MAILER',
-        26 => 'MAIL_HOST',
-        27 => 'MAIL_PORT',
-        28 => 'MAIL_USERNAME',
-        29 => 'MAIL_PASSWORD',
-        30 => 'MAIL_ENCRYPTION',
-        31 => 'MAIL_FROM_ADDRESS',
-        32 => 'MAIL_FROM_NAME',
-        33 => 'AWS_ACCESS_KEY_ID',
-        34 => 'AWS_SECRET_ACCESS_KEY',
-        35 => 'AWS_DEFAULT_REGION',
-        36 => 'AWS_BUCKET',
-        37 => 'AWS_USE_PATH_STYLE_ENDPOINT',
-        38 => 'PUSHER_APP_ID',
-        39 => 'PUSHER_APP_KEY',
-        40 => 'PUSHER_APP_SECRET',
-        41 => 'PUSHER_APP_CLUSTER',
-        42 => 'MIX_PUSHER_APP_KEY',
-        43 => 'MIX_PUSHER_APP_CLUSTER',
+        25 => 'AWS_ACCESS_KEY_ID',
+        26 => 'AWS_SECRET_ACCESS_KEY',
+        27 => 'AWS_DEFAULT_REGION',
+        28 => 'AWS_BUCKET',
+        29 => 'AWS_USE_PATH_STYLE_ENDPOINT',
+        30 => 'PUSHER_APP_ID',
+        31 => 'PUSHER_APP_KEY',
+        32 => 'PUSHER_APP_SECRET',
+        33 => 'PUSHER_APP_CLUSTER',
+        34 => 'MIX_PUSHER_APP_KEY',
+        35 => 'MIX_PUSHER_APP_CLUSTER',
       ),
       '_ENV' => 
       array (
@@ -162,25 +154,17 @@
         22 => 'REDIS_HOST',
         23 => 'REDIS_PASSWORD',
         24 => 'REDIS_PORT',
-        25 => 'MAIL_MAILER',
-        26 => 'MAIL_HOST',
-        27 => 'MAIL_PORT',
-        28 => 'MAIL_USERNAME',
-        29 => 'MAIL_PASSWORD',
-        30 => 'MAIL_ENCRYPTION',
-        31 => 'MAIL_FROM_ADDRESS',
-        32 => 'MAIL_FROM_NAME',
-        33 => 'AWS_ACCESS_KEY_ID',
-        34 => 'AWS_SECRET_ACCESS_KEY',
-        35 => 'AWS_DEFAULT_REGION',
-        36 => 'AWS_BUCKET',
-        37 => 'AWS_USE_PATH_STYLE_ENDPOINT',
-        38 => 'PUSHER_APP_ID',
-        39 => 'PUSHER_APP_KEY',
-        40 => 'PUSHER_APP_SECRET',
-        41 => 'PUSHER_APP_CLUSTER',
-        42 => 'MIX_PUSHER_APP_KEY',
-        43 => 'MIX_PUSHER_APP_CLUSTER',
+        25 => 'AWS_ACCESS_KEY_ID',
+        26 => 'AWS_SECRET_ACCESS_KEY',
+        27 => 'AWS_DEFAULT_REGION',
+        28 => 'AWS_BUCKET',
+        29 => 'AWS_USE_PATH_STYLE_ENDPOINT',
+        30 => 'PUSHER_APP_ID',
+        31 => 'PUSHER_APP_KEY',
+        32 => 'PUSHER_APP_SECRET',
+        33 => 'PUSHER_APP_CLUSTER',
+        34 => 'MIX_PUSHER_APP_KEY',
+        35 => 'MIX_PUSHER_APP_CLUSTER',
       ),
     ),
   ),
@@ -288,7 +272,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\laragon\\www\\mindchain-new\\storage\\framework/cache/data',
+        'path' => 'X:\\xampp\\htdocs\\mindchain-new\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -506,13 +490,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\laragon\\www\\mindchain-new\\storage\\app',
+        'root' => 'X:\\xampp\\htdocs\\mindchain-new\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\laragon\\www\\mindchain-new\\storage\\app/public',
+        'root' => 'X:\\xampp\\htdocs\\mindchain-new\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -532,7 +516,7 @@
     ),
     'links' => 
     array (
-      'D:\\laragon\\www\\mindchain-new\\public\\storage' => 'D:\\laragon\\www\\mindchain-new\\storage\\app/public',
+      'X:\\xampp\\htdocs\\mindchain-new\\public\\storage' => 'X:\\xampp\\htdocs\\mindchain-new\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -567,13 +551,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'D:\\laragon\\www\\mindchain-new\\storage\\logs/laravel.log',
+        'path' => 'X:\\xampp\\htdocs\\mindchain-new\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'D:\\laragon\\www\\mindchain-new\\storage\\logs/laravel.log',
+        'path' => 'X:\\xampp\\htdocs\\mindchain-new\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -625,18 +609,18 @@
       ),
       'emergency' => 
       array (
-        'path' => 'D:\\laragon\\www\\mindchain-new\\storage\\logs/laravel.log',
+        'path' => 'X:\\xampp\\htdocs\\mindchain-new\\storage\\logs/laravel.log',
       ),
     ),
   ),
   'mail' => 
   array (
     'driver' => 'smtp',
-    'host' => 'smtp.gmail.com',
+    'host' => 'mail.cryptooval.com',
     'port' => '465',
     'encryption' => 'tls',
-    'username' => 'officialmindchain@gmail.com',
-    'password' => 'ldbyjzcfnjddifut',
+    'username' => 'info@cryptooval.com',
+    'password' => 'LnK-gXbTHT1A',
     'from' => 
     array (
       'address' => 'no-reply@mindchainwallet.com',
@@ -755,7 +739,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\laragon\\www\\mindchain-new\\storage\\framework/sessions',
+    'files' => 'X:\\xampp\\htdocs\\mindchain-new\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -818,9 +802,9 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\laragon\\www\\mindchain-new\\resources\\views',
+      0 => 'X:\\xampp\\htdocs\\mindchain-new\\resources\\views',
     ),
-    'compiled' => 'D:\\laragon\\www\\mindchain-new\\storage\\framework\\views',
+    'compiled' => 'X:\\xampp\\htdocs\\mindchain-new\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -895,7 +879,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'D:\\laragon\\www\\mindchain-new',
+    'remote_sites_path' => 'X:\\xampp\\htdocs\\mindchain-new',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',
