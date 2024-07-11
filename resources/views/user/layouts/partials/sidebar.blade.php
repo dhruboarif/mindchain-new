@@ -103,7 +103,7 @@
                             <span class="mini-click-non text-capitalize sidebar-title">Earn MUSD</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title=""
-                                    href="/home/buy_mstaking/{{ Auth::user()->id }}{{ Auth::user()->id }}"><span
+                                    href="/home/buy_mstaking/{{ Auth::user()->id }}"><span
                                         class="mini-sub-pro">MUSD Staking</span></a></li>
                             <li><a title="" href="/home/mstaking-history/{{ Auth::user()->id }}"><span
                                         class="mini-sub-pro">MUSD Staking History</span></a></li>

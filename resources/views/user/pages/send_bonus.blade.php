@@ -113,7 +113,7 @@
                                                     <tr>
                                                         <th scope="col">#</th>
                                                         <th scope="col">Transfer Date</th>
-                                                        <th scope="col">MUSD Transfer To</th>
+                                                        <th scope="col">MIND Transfer To</th>
                                                         <th scope="col">Description</th>
                                                         <th scope="col">Type</th>
                                                         <th scope="col">Amount</th>
@@ -158,7 +158,7 @@
 
 
                                                     </tr>
-                                                    @include('user.modals.transferconfirmationmodal')
+                                                    @include('user.modals.mindtransferconfirmationmodal')
                                                 @endforeach
 
 
