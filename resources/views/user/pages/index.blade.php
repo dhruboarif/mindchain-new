@@ -1112,13 +1112,6 @@
         </div>
     </div>
 
-
-
-    @include('user.modals.mind_stake')
-
-
-
-
     @push('scripts')
         <script>
             function calculate() {
