@@ -34,7 +34,7 @@
                 </div>
                 </div>
                 @endif
-                             <!-- Content  section 
+                             <!-- Content  section
      ============================================  -->
                     <div class="bmind-page-staus mg-t-30  mg-b-30">
                         <div class="container-fluid">
@@ -144,7 +144,7 @@
                                     <div class="stage-title">
                                         <h3 class="text-left" >Bmind Stage List</h3>
                                     </div>
-                                    
+
                                     <div class="row mg-t-30 mg-b-30">
                                         @foreach($data['bmindstages'] as $row)
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 bmind-stage-list ">
@@ -159,21 +159,21 @@
                                                     <form>
                                                         <div class="form-group">
                                                             <label for="totalTokenIssued" class="col-form-label" >Total Token Issued</label>
-                                                            <input disabled type="text" class="form-control" value="{{$row->total_token_issues }}" >
-                                                            <input type="text" class="form-control" id="totalTokenIssued" disabled value="30000000">
+                                                            <input readonly type="text" class="form-control" value="{{$row->total_token_issues }}" >
+                                                            <input type="text" class="form-control" id="totalTokenIssued" readonly value="30000000">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="availableTokens" class="col-form-label">Available Tokens</label>
-                                                            <input type="text" class="form-control" id="availableTokens" disabled value="{{$row->total_token_issues - $row->total_token_sell }}">
+                                                            <input type="text" class="form-control" id="availableTokens" readonly value="{{$row->total_token_issues - $row->total_token_sell }}">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="tokenBasePrice" class="col-form-label">Token Base Price</label>
-                                                        <input disabled type="text" class="form-control" id="token_base_price_{{$row->title}}" value="{{$row->token_base_price}}" >
+                                                        <input readonly type="text" class="form-control" id="token_base_price_{{$row->title}}" value="{{$row->token_base_price}}" >
 
                                                           </div>
                                                           <div class="form-group">
                                                             <label for="bonusDuration" class="col-form-label">Bonus Duration (days)</label>
-                                                        <input disabled type="text" class="form-control" value="{{$row->duration}}" >
+                                                        <input readonly type="text" class="form-control" value="{{$row->duration}}" >
 
                                                           </div>
                                                           <div class="form-group">
@@ -186,36 +186,36 @@
                                                           </div>
                                                           <div class="form-group">
                                                             <label for="totalPrice" class="col-form-label">Total Price (USDT)</label>
-                                                            <input disabled type="text" id="total_price_{{$row->title}}" class="form-control" value="{{ $row->communityTokenPackageSettings->isNotEmpty() ? $row->communityTokenPackageSettings[0]->amount * $row->token_base_price : '' }}" >
+                                                            <input readonly type="text" id="total_price_{{$row->title}}" class="form-control" value="{{ $row->communityTokenPackageSettings->isNotEmpty() ? $row->communityTokenPackageSettings[0]->amount * $row->token_base_price : '' }}" >
                                                           </div>
                                                           <div class="form-group">
                                                             <label for="dailyBonus" class="col-form-label">Daily Bonus</label>
-                                                            <input disabled type="text" name="daily_bonus" class="form-control" id="daily_bonus_{{$row->title}}" value="{{ $row->communityTokenPackageSettings->isNotEmpty() ? $row->communityTokenPackageSettings[0]->daily_bonus : '' }}">
+                                                            <input readonly type="text" name="daily_bonus" class="form-control" id="daily_bonus_{{$row->title}}" value="{{ $row->communityTokenPackageSettings->isNotEmpty() ? $row->communityTokenPackageSettings[0]->daily_bonus : '' }}">
                                                           </div>
                                                           <div class="form-group">
                                                             <label for="startDate" class="col-form-label">Start Date</label>
-                                                        <input disabled type="text" class="form-control" value="{{$row->start_date}}" >
+                                                        <input readonly type="text" class="form-control" value="{{$row->start_date}}" >
 
                                                           </div>
                                                           <div class="form-group">
                                                             <label for="endDate" class="col-form-label">End Date</label>
-                                                        <input disabled type="text" class="form-control" value="{{$row->end_date}}" >
+                                                        <input readonly type="text" class="form-control" value="{{$row->end_date}}" >
 
                                                           </div>
                                                         </form>
 
                                                         @if($row->status == 'Active')
-                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bmindbuymodal{{$row->id}}" onclick="captureSelectedAmount('{{$row->title}}')">Buy B-Mind</button>
+                                                        <button type="button" class="bmind-btn mg-t-15" data-toggle="modal" data-target="#bmindbuymodal{{$row->id}}" onclick="captureSelectedAmount('{{$row->title}}')">Buy B-Mind</button>
                                                         @include('user.modals.bmind.bmindbuymodal')
                                                         @else
-                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#" disabled>Upcoming</button>
+                                                        <button type="button" class="bmind-btn mg-t-15" data-bs-toggle="modal" data-bs-target="#" readonly>Upcoming</button>
                                                         @endif
 
                                                     </div>
                                             </div>
                                         </div>
-                                        
-                                        
+
+
                                         @endforeach
                                     </div>
 
@@ -224,18 +224,18 @@
                             </div>
                         </div>
                     </div>
-                <!--Content    section 
+                <!--Content    section
                 ============================================  -->
                 </div>
-            </div>           
+            </div>
         </div>
     </div>
 
 
 
     @push('scripts')
-      
-      
+
+
 <script>
     function updateSelectedAmount(stageId) {
 
@@ -245,11 +245,11 @@
         var csrfToken = '{{ csrf_token() }}'; // Retrieve the CSRF token value
 
         var tokenBasePrice = document.getElementById('token_base_price_' + stageId).value;
-        
+
         // Calculate the total price
         var totalPrice = selectedAmount * tokenBasePrice;
         // Update the total price input
-        document.getElementById('total_price_' + stageId).value = totalPrice; 
+        document.getElementById('total_price_' + stageId).value = totalPrice;
 
         // Make an Ajax request to update the daily bonus based on the selected amount
         $.ajax({
@@ -269,7 +269,7 @@
             }
         });
     }
-    
+
 
 
 </script>
@@ -281,6 +281,6 @@
     }
 </script>
 
-   
+
     @endpush
 @endsection

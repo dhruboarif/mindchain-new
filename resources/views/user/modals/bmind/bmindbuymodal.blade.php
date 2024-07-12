@@ -12,8 +12,9 @@
               <p>Are you sure you want to Buy this B-Mind?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+
                 <form id="jquery-val-form" action="{{ route('buy-bmindnew') }}" method="post">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="bmind_id" value="{{ $row->id }}">

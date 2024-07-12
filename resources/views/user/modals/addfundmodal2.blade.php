@@ -15,10 +15,10 @@
                     <?php
                     $account_info = App\Models\AccountInfo::where('payment_type_id', '!=', 2)->get();
                     ?>
-                    <div class="form-group">
-                        <label for="selectMusdDepositAddress" class="col-form-label">Select Wallet</label>
-                        <select id="musddeposit" class="form-select form-control" name="payment_wallet_id" 
-                            aria-label="Default select example">
+                    <div class="form-group" data-section="1">
+                        <label for="selectWallet1" class="col-form-label">Select Wallet</label>
+                        <select id="selectWallet1" class="form-select form-control" name="payment_wallet_id"
+                            aria-label="Default select example" onchange="selectWallet(1)">
                             <option selected disabled>choose Wallet</option>
                             @foreach ($account_info as $payment)
                                 <option id="{{ $payment->wallet_no }}" value="{{ $payment->wallet_no }}">
@@ -27,12 +27,12 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="musdDepositAddress" class="col-form-label">Wallet Address</label>
-                        <input type="text" class="form-control" name="wallet_id" id="musd_wallet_id">
-                        <button class="copy-button" onclick="copyMusdDepositWallet(event)">
-                            <i class="fa-solid fa-copy copy-musd-depo-wall"></i>
-                            <i class="fa-solid fa-clipboard clipboard-musd-depo-wall text-warning"></i>
+                    <div class="form-group" data-section="1">
+                        <label for="copyAddress1" class="col-form-label">Wallet Address</label>
+                        <input type="text" class="form-control" name="wallet_id" id="copyAddress1">
+                        <button class="copy-button" onclick="copyWallet(event, 1)">
+                            <i class="fa-solid fa-copy copy-icon"></i>
+                            <i class="fa-solid fa-clipboard clipboard-icon text-warning"></i>
                         </button>
                     </div>
                     <div class="form-group">
@@ -56,7 +56,7 @@
 @push('scripts')
 
 <script type="text/javascript">
-    
+
     //alert('success');
     //console.log(this.getAttribute('id'));
     //console.log(e.target.options[e.target.selectedIndex].getAttribute('id'));

@@ -79,7 +79,7 @@
 
                         <div class="bd-example table-responsive">
 
-                               <table class="table table-bordered table-border">
+                               <table class="">
 
                                    <thead>
 
@@ -96,7 +96,7 @@
                                            <th scope="col">Blockchain</th>
 
                                            <th scope="col">Total Supply</th>
-                                           
+
                                                    <!--<th scope="col">ACTION</th>-->
 
                                        </tr>

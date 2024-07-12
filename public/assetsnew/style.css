@@ -4352,6 +4352,23 @@ th.fc-day-header.fc-widget-header {
     margin-bottom: 50px;
     float: left;
 }
+.form-control[readonly] {
+    background-color: #152036;
+}
+.add-affiliate label{
+    margin-top: 20px;
+}
+select{
+    height: 25px;
+    background: none;
+    box-shadow: none;
+}
+
+select option{
+    font-weight: 300;
+    color: #fff;
+    background-color:#2E293A;
+}
 .page-section-btn .page-button{
     background:  #FF971D;
     border: none;

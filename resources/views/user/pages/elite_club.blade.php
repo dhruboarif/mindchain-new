@@ -313,7 +313,7 @@
                                         <button class="elite-btn" type="button">Already joined </button>
                                         @endif
 
-                                        <p class="mem-join-sec">USD Balance: {{ $data['sum_usdwallet'] }}</p>
+                                        <p class="mem-join-sec" style="font-size: 15px">Deposit <del class="text-danger"><i>$1500</i></del> $1250 to become a Elite Club Member</p>
                                     </div>
                                     @include('user.modals.depositusdt')
                                 </div>
@@ -378,13 +378,13 @@
                                                                 <label for="membershipFee"
                                                                     class="col-form-label">Membership Fee</label>
                                                                 <input type="text" class="form-control"
-                                                                    id="membershipFee" disabled value="1250"
+                                                                    id="membershipFee" readonly value="1250"
                                                                     name="mem_fee">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="usdt-Aval-bal" class="col-form-label">USD
                                                                     Available Balance</label>
-                                                                <input type="text" name="avl_balance" disabled
+                                                                <input type="text" name="avl_balance" readonly
                                                                     id="wallet_id" value="{{ $data['sum_usdwallet'] }}"
                                                                     class="form-control"required />
                                                             </div>
