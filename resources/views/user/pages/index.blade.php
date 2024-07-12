@@ -30,14 +30,14 @@
                 <div class="mind-sec text-center" id="mind-sec">
                     <div class="mindp text-white text-center">MIND:</div>
                     <div class="pricemind text-white m-flex">
-                        <p id="priceValue2"></p> <span id="changeValue2"></span>
+                        <p class="priceValue"></p> <span class="changeValue"></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    
+
     <!-- mobile screen mind price section end
                         ============================================ -->
     @php
@@ -52,7 +52,7 @@
                           <div class="row align-items-center mb-4">
                              <div class="col-xl-9 d-none d-md-block">
                                 <div class="card mb-xl-0">
-                 
+
                                   @if(Session::has('token_sell'))
                                   <div class="alert alert-success d-flex align-items-center" role="alert">
                                   <svg class="bi flex-shrink-0 me-2" width="24" height="24">
@@ -117,11 +117,11 @@
                                </div>
                                </div>
                                   @endif
-                 
-                                  
+
+
                                 </div>
                              </div>
-                          
+
                           </div>
                     </div>
                  </div>
@@ -163,7 +163,7 @@
                                     </button>
                                 </div>
                                 <input type="text" id="hiddenInput" class="hidden-input"
-                                    value="my.mindchainwallet.com/register">
+                                    value="{{ Auth::user()->referral_link }}">
 
                             </div>
                             <!-- mind wallet section start
@@ -251,8 +251,6 @@
 
                                             <a href="/home/withdraw/{{ Auth::user()->id }}"><button type="button"
                                                     class="btn btn-sm withdraw text-capitalize"><span>Withdraw</span></button></a>
-                                            <a href="/home/buy_staking/{{ Auth::user()->id }}"><button type="button"
-                                                    class="btn btn-sm stake text-capitalize"><span>Stake</span></button></a>
 
                                         </div>
                                         <div class="coin-img">
@@ -280,16 +278,6 @@
                                             <button type="button" data-toggle="modal" data-target="#bmindDeposit"
                                                 data-whatever="" class="btn btn-sm deposit text-capitalize">
                                                 <span>deposit</span></button>
-
-                                            <button type="button" data-toggle="modal" data-target="#bmindWithdraw"
-                                                data-whatever="" class="btn btn-sm withdraw text-capitalize">
-                                                <span>withdraw</span> </button>
-                                            <div class="modal withdraw-modal fade" id="bmindWithdraw" tabindex="-1"
-                                                role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-
-                                                </div>
-                                            </div>
 
                                             <a href="/home/buy-bmind/{{ Auth::user()->id }}">
                                                 <button type="button" class="btn btn-sm stake text-capitalize">
@@ -322,11 +310,6 @@
                                                 data-whatever="" class="btn btn-sm deposit text-capitalize">
                                                 <span>deposit</span></button>
                                             @include('user.modals.depositusdt')
-
-                                            <a href="/home/withdraw-usd/{{ Auth::user()->id }}">
-                                                <button type="button" class="btn btn-sm withdraw text-capitalize">
-                                                    <span>withdraw</span></button>
-                                            </a>
 
                                             <a href="/home/send-usdt/{{ Auth::user()->id }}">
                                                 <button type="button" class="btn btn-sm stake text-capitalize">
@@ -543,6 +526,57 @@
                                                                                 d="M9.875 5.59756C9.6836 5.67959 6.9961 7.71084 6.95313 7.80459C6.83204 8.07022 6.91016 8.17959 7.55079 8.65225C7.78125 8.82412 7.96875 8.97256 7.96875 8.98818C7.96875 9.00381 7.75 9.17959 7.48438 9.37881C6.71485 9.95303 6.71485 10.0468 7.48438 10.621C7.75 10.8202 7.96875 10.996 7.96875 11.0116C7.96875 11.0272 7.75 11.203 7.48047 11.4022C7.21094 11.6015 6.97266 11.8007 6.95313 11.8397C6.90235 11.9296 6.90235 12.0819 6.95313 12.1952C7 12.2929 9.69532 14.3241 9.88672 14.4062C9.99219 14.4491 10.0273 14.4491 10.1523 14.3866C10.3945 14.2655 13 12.2968 13.043 12.1991C13.1602 11.9452 13.0664 11.8085 12.5039 11.3866C12.2422 11.1952 12.0313 11.0272 12.0313 11.0116C12.0313 10.996 12.25 10.8202 12.5156 10.621C13.2852 10.0468 13.2852 9.95303 12.5156 9.37881C12.25 9.17959 12.0313 9.00381 12.0313 8.98818C12.0313 8.97256 12.2422 8.80459 12.5039 8.61318C13.0664 8.19131 13.1602 8.05459 13.043 7.80068C13.0078 7.72647 10.5781 5.871 10.2344 5.65615C10.0859 5.5624 9.99219 5.54678 9.875 5.59756ZM11.0195 7.19131C11.5664 7.59756 12.0156 7.94912 12.0234 7.96475C12.0352 7.9999 10.0586 9.49209 10 9.49209C9.94141 9.49209 7.96485 7.9999 7.97657 7.96475C7.99219 7.92568 9.96485 6.44522 10 6.44522C10.0156 6.44522 10.4727 6.78115 11.0195 7.19131ZM9.25391 9.91787C9.56641 10.1522 9.86719 10.3554 9.92188 10.371C10.0742 10.4062 10.168 10.3554 10.7773 9.90225C11.0859 9.67178 11.3594 9.496 11.3906 9.50772C11.4766 9.53897 12.0313 9.96865 12.0313 9.9999C12.0313 10.0312 10.1016 11.4765 10.0195 11.5077C9.96875 11.5272 7.98829 10.0546 7.98829 9.996C7.98829 9.95303 8.58985 9.496 8.64844 9.49209C8.66797 9.49209 8.94141 9.6835 9.25391 9.91787ZM10 12.4022C10.125 12.4022 10.2305 12.3358 10.75 11.9452L11.3516 11.4921L11.6836 11.7421C11.8633 11.8749 12.0117 12.0038 12.0117 12.0272C12.0117 12.0663 10.0508 13.5546 10 13.5546C9.94922 13.5546 7.98829 12.0663 7.98829 12.0272C7.98829 12.0038 8.13672 11.8749 8.31641 11.7421L8.64844 11.4921L9.25 11.9452C9.76954 12.3358 9.875 12.4022 10 12.4022Z"
                                                                                 fill="white" />
                                                                         </svg> stake</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 st-wallet-titel">
+                                                        <div class="row d-flex justify-content-between">
+                                                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                                                <div class="wallet-single-name d-flex st-com">
+                                                                    <img src="{{ asset('assetsnew/img/img-icon/BMIND Icon-01.png') }}"
+                                                                        alt="">
+                                                                    <p class="text-uppercase text-left">Kids P.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                                                <div class="wallet-st-bal st-com">
+                                                                    <p class="text-capitalize text-left">
+                                                                        {{ $data['sum_bmindwallet'] ? number_format((float) $data['sum_bmindwallet'], 2, '.', '') : '00.00' }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                                                <div class="wallet-st-usdt-bal st-com">
+                                                                    <p class="text-capitalize text-left">
+                                                                        ${{ round($data['sum_bmindwallet'] * 0.03, 2) }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                                                <div class="wallet-st-locked st-com">
+                                                                    <p class="text-capitalize text-left">62251 </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                                                <div class="wallet-st-action st-com">
+                                                                    <button data-toggle="modal" data-target="#bmindStake"
+                                                                        data-whatever=""
+                                                                        class="text-capitalize text-center text-white"><svg
+                                                                            width="18" height="18"
+                                                                            viewBox="0 0 20 20" fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M9.14062 0.804688C7.37891 1.01562 5.97656 1.53516 4.70703 2.44141C2.71875 3.86328 1.40625 5.87891 0.941406 8.22266C0.691406 9.50781 0.738281 11.0703 1.07422 12.3516C1.74219 14.9102 3.46484 17.0234 5.89844 18.2656L6.26953 18.457L3.62109 18.4766L0.96875 18.4961L0.875 18.6055C0.75 18.75 0.75 18.9453 0.875 19.0898L0.96875 19.1992L5.48438 19.2188C7.96875 19.2305 12.0312 19.2305 14.5156 19.2188L19.0312 19.1992L19.125 19.0898C19.25 18.9453 19.25 18.75 19.125 18.6055L19.0312 18.4961L16.3789 18.4766L13.7305 18.457L14.1797 18.2305C15.8594 17.375 17.2461 16.0117 18.1406 14.3438C18.6406 13.4023 18.9453 12.4922 19.1289 11.3867C19.2305 10.7773 19.2305 9.22266 19.1289 8.61328C18.7969 6.59375 17.9258 4.88281 16.5156 3.47266C15.1172 2.07422 13.3945 1.19531 11.4141 0.875C11.0508 0.816406 9.45703 0.765625 9.14062 0.804688ZM11.1523 1.625C12.0703 1.75 12.8672 1.99609 13.7305 2.42188C15.4297 3.25781 16.7422 4.57031 17.5781 6.26953C18.1836 7.5 18.4453 8.62109 18.4453 10C18.4453 11.3828 18.1836 12.5117 17.5781 13.7305C16.7344 15.4414 15.4297 16.7422 13.7305 17.5781C12.4922 18.1875 11.4102 18.4375 10 18.4375C8.58984 18.4375 7.51172 18.1875 6.26953 17.5781C4.57031 16.7422 3.25391 15.4258 2.42188 13.7305C1.81641 12.5 1.55469 11.3789 1.55469 10C1.55469 8.62109 1.81641 7.5 2.42188 6.26953C3.25391 4.57422 4.57031 3.25781 6.26953 2.42188C7.82422 1.65625 9.44141 1.39453 11.1523 1.625Z"
+                                                                                fill="white" />
+                                                                            <path
+                                                                                d="M9.16013 2.74226C7.41794 2.93758 5.68747 3.84383 4.52732 5.16805C3.17185 6.71492 2.5195 8.7618 2.73825 10.7735C3.207 15.1095 7.33591 18.0665 11.5976 17.1251C13.0703 16.797 14.4609 15.9766 15.4609 14.8438C17.0234 13.0704 17.6367 10.7071 17.125 8.40242C16.3828 5.05867 13.3593 2.66414 9.93357 2.6993C9.67966 2.7032 9.332 2.72273 9.16013 2.74226ZM11.3086 3.59383C13.8984 4.14851 15.8437 6.10555 16.414 8.72273C16.4883 9.07039 16.5 9.23836 16.5 10.0001C16.5 10.7618 16.4883 10.9298 16.414 11.2774C16.2187 12.1759 15.8242 13.0821 15.3242 13.7891C14.9843 14.2657 14.2656 14.9845 13.789 15.3243C13.082 15.8243 12.1758 16.2188 11.2773 16.4141C10.9297 16.4884 10.7617 16.5001 9.99997 16.5001C9.24216 16.5001 9.06638 16.4884 8.72654 16.4141C8.12107 16.2813 7.6445 16.1134 7.08982 15.8399C5.2695 14.9298 4.03122 13.3165 3.58591 11.2774C3.51169 10.9298 3.49997 10.7618 3.49997 10.0001C3.49997 9.23836 3.51169 9.07039 3.58591 8.72273C4.18357 5.98055 6.27732 3.98055 9.00779 3.53523C9.53122 3.4493 10.7929 3.48055 11.3086 3.59383Z"
+                                                                                fill="white" />
+                                                                            <path
+                                                                                d="M9.875 5.59756C9.6836 5.67959 6.9961 7.71084 6.95313 7.80459C6.83204 8.07022 6.91016 8.17959 7.55079 8.65225C7.78125 8.82412 7.96875 8.97256 7.96875 8.98818C7.96875 9.00381 7.75 9.17959 7.48438 9.37881C6.71485 9.95303 6.71485 10.0468 7.48438 10.621C7.75 10.8202 7.96875 10.996 7.96875 11.0116C7.96875 11.0272 7.75 11.203 7.48047 11.4022C7.21094 11.6015 6.97266 11.8007 6.95313 11.8397C6.90235 11.9296 6.90235 12.0819 6.95313 12.1952C7 12.2929 9.69532 14.3241 9.88672 14.4062C9.99219 14.4491 10.0273 14.4491 10.1523 14.3866C10.3945 14.2655 13 12.2968 13.043 12.1991C13.1602 11.9452 13.0664 11.8085 12.5039 11.3866C12.2422 11.1952 12.0313 11.0272 12.0313 11.0116C12.0313 10.996 12.25 10.8202 12.5156 10.621C13.2852 10.0468 13.2852 9.95303 12.5156 9.37881C12.25 9.17959 12.0313 9.00381 12.0313 8.98818C12.0313 8.97256 12.2422 8.80459 12.5039 8.61318C13.0664 8.19131 13.1602 8.05459 13.043 7.80068C13.0078 7.72647 10.5781 5.871 10.2344 5.65615C10.0859 5.5624 9.99219 5.54678 9.875 5.59756ZM11.0195 7.19131C11.5664 7.59756 12.0156 7.94912 12.0234 7.96475C12.0352 7.9999 10.0586 9.49209 10 9.49209C9.94141 9.49209 7.96485 7.9999 7.97657 7.96475C7.99219 7.92568 9.96485 6.44522 10 6.44522C10.0156 6.44522 10.4727 6.78115 11.0195 7.19131ZM9.25391 9.91787C9.56641 10.1522 9.86719 10.3554 9.92188 10.371C10.0742 10.4062 10.168 10.3554 10.7773 9.90225C11.0859 9.67178 11.3594 9.496 11.3906 9.50772C11.4766 9.53897 12.0313 9.96865 12.0313 9.9999C12.0313 10.0312 10.1016 11.4765 10.0195 11.5077C9.96875 11.5272 7.98829 10.0546 7.98829 9.996C7.98829 9.95303 8.58985 9.496 8.64844 9.49209C8.66797 9.49209 8.94141 9.6835 9.25391 9.91787ZM10 12.4022C10.125 12.4022 10.2305 12.3358 10.75 11.9452L11.3516 11.4921L11.6836 11.7421C11.8633 11.8749 12.0117 12.0038 12.0117 12.0272C12.0117 12.0663 10.0508 13.5546 10 13.5546C9.94922 13.5546 7.98829 12.0663 7.98829 12.0272C7.98829 12.0038 8.13672 11.8749 8.31641 11.7421L8.64844 11.4921L9.25 11.9452C9.76954 12.3358 9.875 12.4022 10 12.4022Z"
+                                                                                fill="white" />
+                                                                        </svg> Buy</button>
                                                                 </div>
                                                             </div>
 
@@ -841,24 +875,24 @@
 
                                 <div class="row valueSec">
                                     <div class="col-sm-6">
-                                        <div class="">
+                                        <div class="form-group">
                                             <p class="totalValue">Total Value ($):</p>
                                             <input type="text" id="total_value" readonly class="totalAmount"
                                                 name="total_value" required>
                                         </div>
-                                        <div>
+                                        <div class="form-group">
                                             <p class="payable">Payable ($):</p>
                                             <input type="text" readonly id="payable" name="payable"
                                                 class="payableAmount" required>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div>
+                                    <div class="col-sm-6 ">
+                                        <div class="form-group">
                                             <p class="mindPrice">Mind Price ($):</p>
                                             <input type="text" readonly class="priceValue mindPriceAmount"
                                                 value="{{ $data['settings']->token_convert_rate }}">
                                         </div>
-                                        <div>
+                                        <div class="form-group">
                                             <p class="buyingFee">Buying Fee(%):</p>
                                             <input type="text" readonly class="buyingFee"
                                                 value="{{ $data['settings']->buying_commission }}">
@@ -897,8 +931,8 @@
                                     <div class="mind-sec">
                                         <div class="mindn np">MIND Price:</div>
                                         <div class="pricem m-flex np">
-                                            <p id="priceValue"></p>
-                                            <p id="changeValue"></p>
+                                            <p class="priceValue"></p>
+                                            <p class="changeValue"></p>
                                         </div>
                                     </div>
                                     <div class="mind-sec">
@@ -927,9 +961,9 @@
                         </div><!-- Price and Offer Section END
                                             ============================================ -->
                         <?php
-                        
+
                         $User = App\Models\User::where('id', Auth::id())->first();
-                        
+
                         ?>
                         <!-- BMIND Target
               ============================================ -->
@@ -996,7 +1030,7 @@
 
                                                 <?php
                                                 $cashwallet_tr = App\Models\AddMoney::where('user_id', Auth::id())->latest()->take(10)->get();
-                                                
+
                                                 ?>
                                                 <tbody>
                                                     @foreach ($cashwallet_tr as $cr)
@@ -1045,7 +1079,7 @@
                                                 </thead>
                                                 <?php
                                                 $cashwallet_tr = App\Models\AddMoney::where('user_id', Auth::id())->latest()->take(10)->get();
-                                                
+
                                                 ?>
                                                 <tbody>
                                                     @foreach ($cashwallet_tr as $cr)
@@ -1077,13 +1111,6 @@
             </div>
         </div>
     </div>
-
-
-
-    @include('user.modals.mind_stake')
-
-
-
 
     @push('scripts')
         <script>

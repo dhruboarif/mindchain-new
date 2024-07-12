@@ -1,7 +1,7 @@
 /node_modules
 #public
-#public/storage
-#storage/*.key
+/public/storage
+/storage/*.key
 #vendor
 /.env
 .env.backup
@@ -12,3 +12,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+/config/*
+/bootstrap/*
+/storage/logs/*
