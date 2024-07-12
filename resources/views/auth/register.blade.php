@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('assetsnew/css/bootstrap.min.css') }}">
     <!-- Bootstrap CSS
   ============================================ -->
-    {{-- <link rel="stylesheet" href="{{asset('assetsnew/css/font-awesome.min.css')}}"> --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- nalika Icon CSS
   ============================================ -->
     <link rel="stylesheet" href="{{ asset('assetsnew/css/nalika-icon.css') }}">
@@ -116,7 +116,7 @@
                                 <svg width="18" height="20" viewBox="0 0 20 23" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     @error('user_name')
-                                        <span class="alert alert-danger" role="alert">
+                                        <span class="alert alert-danger" role="alert" >
                                             {{ $message }}
                                         </span>
                                     @enderror
@@ -141,7 +141,7 @@
 
                             <div class="form-group">
                                 <label for="password" class="col-form-label">Password <span>*</span></label>
-                                <input type="password" class="form-control" name="password" class="form-style @error('password') is-invalid @enderror" placeholder="Your Password" id="logpass" autocomplete="off" required>
+                                <input type="password" class="form-control" name="password" class="form-style @error('password') is-invalid @enderror" placeholder="Your Password" id="password4" autocomplete="off" required>
                                 <svg width="18" height="20" viewBox="0 0 20 23" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -152,7 +152,7 @@
                             <div class="form-group">
                                 <label for="confirmPassword" class="col-form-label">Confirm Password
                                     <span>*</span></label>
-                                <input type="password" class="form-control" id="password-confirm" type="password" name="password_confirmation" class="form-style" placeholder="Password Confirm" autocomplete="off" required>
+                                <input type="password" class="form-control" id="password5" type="password" name="password_confirmation" class="form-style" placeholder="Password Confirm" autocomplete="off" required>
                                 <svg width="18" height="20" viewBox="0 0 20 23" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -322,7 +322,7 @@ $("body").on("keyup", "#sponsor", function () {
        $.ajax({
            method: 'POST',
            url: '{{route("get-sponsor")}}',
-           data: {search: searchData, 
+           data: {search: searchData,
             _token: '{{ csrf_token() }}'
           },
            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},

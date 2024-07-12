@@ -4914,3 +4914,50 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 10px 40px;
     border-radius: 8px;
 }
+#inputSection {
+    display: none;
+}
+.coupon p{
+    margin-left: 20px;
+}
+.coupon input{
+    width: 97%;
+    height: 40px;
+    background-color: #152036;
+    border: 1px solid #ff971d;
+    border-radius: 3px;
+    padding-left: 10px;
+}
+.coupon input::placeholder{
+    color: darkgrey;
+}
+
+
+.toggle-password {
+    position: absolute;
+    top: 78%;
+    right: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.toggle-password2 {
+    position: absolute;
+    top: 63%;
+    right: 88px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.toggle-password3 {
+    position: absolute;
+    top: 67%;
+    right: 88px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+ .toggle-password4  {
+    position: absolute;
+    top: 67%;
+    right: 88px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

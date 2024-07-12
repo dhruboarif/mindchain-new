@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('assetsnew/css/bootstrap.min.css')}}">
     <!-- Bootstrap CSS
 		============================================ -->
-    {{-- <link rel="stylesheet" href="{{asset('assetsnew/css/font-awesome.min.css')}}"> --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<!-- nalika Icon CSS
 		============================================ -->
     <link rel="stylesheet" href="{{asset('assetsnew/css/nalika-icon.css')}}">
@@ -83,7 +83,7 @@
                                 <li><a href="https://twitter.com/MindChain1"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="https://www.youtube.com/channel/UCogQYyfu7ista6L1X8SQluw"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
                                 <li><a href="https://t.me/mindchainMIND"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a></li>
-                                
+
                                 <li><a href="https://discord.com/channels/910149384858136587/910149385302720513"><i class="fab fa-discord" aria-hidden="true"></i></a></li>
                                 <li><a href="https://www.reddit.com/user/Mindchainswap"><i class="fab fa-reddit-alien" aria-hidden="true"></i></a></li>
                                 <li><a href="https://medium.com/@mindchain"><i class="fab fa-medium-m" aria-hidden="true"></i></a></li>
@@ -114,25 +114,28 @@
                                     <path d="M9.625 11.75C7.64844 11.75 5.84375 10.7188 4.85547 9C3.86719 7.32422 3.86719 5.21875 4.85547 3.5C5.84375 1.82422 7.64844 0.75 9.625 0.75C11.5586 0.75 13.3633 1.82422 14.3516 3.5C15.3398 5.21875 15.3398 7.32422 14.3516 9C13.3633 10.7188 11.5586 11.75 9.625 11.75ZM7.64844 13.8125H11.5586C15.8125 13.8125 19.25 17.25 19.25 21.5039C19.25 22.1914 18.6484 22.75 17.9609 22.75H1.24609C0.558594 22.75 0 22.1914 0 21.5039C0 17.25 3.39453 13.8125 7.64844 13.8125Z" fill="white"/>
                                     </svg>
                               </div>
-                 
+
                               <div class="form-group">
                                 <label for="password" class="col-form-label">Password <span>*</span></label>
-                                <input type="password" name="password" class="form-control" id="password" placeholder="Enter Your Password" autocomplete="current-password" required>
+                                <input type="password" name="password" class="form-control" id="password3" placeholder="Enter Your Password" autocomplete="current-password" required>
+                                <span  class="toggle-password2" onclick="togglePassword('password3', 'toggle3')">
+                                    <i id="toggle3" class="fas fa-eye"></i>
+                                </span>
                                 <svg width="18" height="20" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.1875 6.9375V9H13.0625V6.9375C13.0625 5.04688 11.5156 3.5 9.625 3.5C7.69141 3.5 6.1875 5.04688 6.1875 6.9375ZM3.4375 9V6.9375C3.4375 3.54297 6.1875 0.75 9.625 0.75C13.0195 0.75 15.8125 3.54297 15.8125 6.9375V9H16.5C18.0039 9 19.25 10.2461 19.25 11.75V20C19.25 21.5469 18.0039 22.75 16.5 22.75H2.75C1.20312 22.75 0 21.5469 0 20V11.75C0 10.2461 1.20312 9 2.75 9H3.4375Z" fill="white"/>
                                     </svg>
                               </div>
-                              
+
                               <p class="text-right forget-password"><a href="forget-password.html">Forget Password?</a></p>
                               <button type="submit">Sign In</button>
                         </form>
-                        
+
                         <p class="mg-t-15">Don't have an account? <a href="/register">Sign Up For Free</a></p>
                     </div>
                 </div>
             </div>
         </div>
-    
+
     </div>
 
 
@@ -149,7 +152,7 @@
     <script src="{{asset('assetsnew/js/wow.min.js')}}"></script>
     <!-- price-slider JS
 		============================================ -->
-        
+
 	<script src="{{asset('assetsnew/js/countdown-timer.js')}}"></script>
     <!-- Timer counter js file
     ============================================ -->

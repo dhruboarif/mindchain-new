@@ -2,7 +2,7 @@
 
 
 @section('user_content')
-    
+
 <div class="section-admin container-fluid mg-b-30">
    <div class="row admin text-center">
        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -36,7 +36,7 @@
             </div>
             </div>
             @endif
-                        <!-- Content  section 
+                        <!-- Content  section
 ============================================  -->
                <div class="earn-page-staus mg-t-30  mg-b-30">
                    <div class="container-fluid">
@@ -48,7 +48,7 @@
                                        <h4 class="mg-t-15 mg-t-30">Stake to Earn</h4>
                                    </div>
                                    <div class="card-content mg-t-30">
-                                       <form id="stakingForm" class="col-lg-12" method="post" action="{{route('buy-staking')}}">
+                                       <form id="stakingForm" method="post" action="{{route('buy-staking')}}">
                                           @csrf
                                           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
 
@@ -86,6 +86,12 @@
                                                <input type="text" id="dailyvalue" name="daily" readonly class="form-control" value="">
                                              </div>
                                          </form>
+                                         <div class="form-group coupon">
+                                            <p class="text-left" onclick="toogleInputSection()">Having a coupon? Click here to <a href="#">Apply Coupon</a></p>
+                                            <div id="inputSection">
+                                                <input type="text" placeholder="Enter Your Coupon Code">
+                                            </div>
+                                          </div>
                                          <button type="submit" id="stakingButton" class="bmind-btn mg-t-15">Stake</button>
                                    </div>
                                </div>
@@ -93,10 +99,10 @@
                        </div>
                    </div>
                </div>
-           <!--Content    section 
+           <!--Content    section
            ============================================  -->
            </div>
-       </div>           
+       </div>
    </div>
 </div>
 
@@ -112,7 +118,7 @@
             });
         })
         function calculate(){
-        
+
           var duration = document.getElementById('duration').value;
           console.log(duration);
           var amount = document.getElementById('amount1').value;
@@ -159,23 +165,32 @@
             document.getElementById('days').value= days;
             document.getElementById('dailyvalue').value= daily_value;
           }
-        
-        
+
+
         }
         </script>
-        
+
         <script>
             $(document).ready(function () {
                 $("#stakingButton").one("click", function () {
                     // Disable the button
                     $(this).prop("disabled", true);
-        
+
                     // Submit the form
                     $("#stakingForm").submit();
                 });
             });
         </script>
+<script>
+    function toogleInputSection() {
+            var inputSection = document.getElementById('inputSection');
+            if (inputSection.style.display === 'none' || inputSection.style.display === '') {
+                inputSection.style.display = 'block';
+            } else {
+                inputSection.style.display = 'none';
+            }
+        }
+</script>
 
-   
     @endpush
 @endsection

@@ -264,4 +264,21 @@ setInterval(fetchMindPrice, 5000);
 			age--;
 		}
 		document.getElementById("kids-age").value = age;
-	}
+    }
+
+	// password show hide section
+
+    function togglePassword(fieldId, toggleId) {
+        var passwordField = document.getElementById(fieldId);
+        var toggleIcon = document.getElementById(toggleId);
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordField.type = 'password';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        }
+    }
+// for show hide password

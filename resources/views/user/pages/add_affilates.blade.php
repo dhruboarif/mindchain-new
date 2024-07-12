@@ -86,6 +86,9 @@
                                                           <div class="form-floating mb-2">
                                                               <label for="Password">Password</label>
                                                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                                                <span class="toggle-password" onclick="togglePassword('password', 'toggle')">
+                                                                    <i id="toggle" class="fas fa-eye"></i>
+                                                                </span>
                                                                 @error('password')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
@@ -96,7 +99,10 @@
                                                       <div class="col-md-6 mb-4">
                                                           <div class="form-floating mb-2">
                                                               <label for="confirmpassword">Confirm-password</label>
-                                                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                                                <input id="password2" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                                                <span class="toggle-password" onclick="togglePassword('password2', 'toggle2')">
+                                                                    <i id="toggle2" class="fas fa-eye"></i>
+                                                                </span>
                                                             </div>
                                                       </div>
                                                    </div>
