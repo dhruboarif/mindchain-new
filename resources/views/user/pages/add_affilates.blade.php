@@ -3,11 +3,11 @@
 
 @section('user_content')
    <div class="bd-example">
-            <div class="row  row-cols-1 row-cols-md-1 g-4">
+            <div class="row text-left row-cols-1 row-cols-md-1 g-4">
                 <div class="col">
                     <div class="card">
                     <div class="card-body">
-                        <h2 class="card-title">Add Affiliate</h2>
+                        <h2 class="card-title text-left">Add Affiliate</h2>
 
                         <hr>
                         @if(Session::has('add_affilate'))
@@ -22,10 +22,10 @@
             @endif
                             <div class="col-md-12 d-flex justify-content-center">
 
-                                 <div class="col-md-8 mt-5">
+                                 <div class="col-md-12 mt-5">
                                     <div class="card">
                                        <div class="card-body">
-                                          <div class="auth-form">
+                                          <div class="auth-form add-affiliate">
                                                 <h2 class="text-center mb-4">Add Affilate</h2>
                                                 <form method="POST" action="{{ route('affilate-add') }}">
                                                   @csrf
@@ -33,8 +33,8 @@
                                                    <div class="row">
                                                       <div class="col-md-6 mb-4">
                                                           <div class="form-floating mb-3">
+                                                              <label for="firstName">Name</label>
                                                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                                                <label for="firstName">Name</label>
                                                                 @error('name')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
@@ -44,8 +44,8 @@
                                                       </div>
                                                       <div class="col-md-6 mb-4">
                                                          <div class="form-floating mb-3">
+                                                             <label for="lastName">Username</label>
                                                                 <input id="user_name" type="text" class="form-control @error('user_name') is-invalid @enderror" name="user_name" value="{{ old('user_name') }}" required autocomplete="user_name" autofocus>
-                                                                <label for="lastName">Username</label>
                                                                 @error('user_name')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
@@ -55,15 +55,11 @@
                                                       </div>
                                                    </div>
 
-
-
-
-
                                                    <div class="row">
                                                       <div class="col-md-6 mb-4">
                                                           <div class="form-floating mb-3">
-                                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                                                                 <label for="floatingInput">Email</label>
+                                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                                                                 @error('email')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
@@ -73,10 +69,10 @@
                                                       </div>
                                                       <div class="col-md-6 mb-4">
                                                           <div class="form-floating mb-3">
-                                                                <input disabled type="text" class="form-control"  value="{{Auth::user()->user_name}}" required autocomplete="sponsor">
-                                                                <label for="floatingInput">Sponsor</label>
+                                                              <label for="floatingInput">Sponsor</label>
+                                                                <input readonly type="text" class="form-control"  value="{{Auth::user()->user_name}}" required autocomplete="sponsor">
                                                                 @error('sponsor')
-                                                                    <span class="invalid-feedback" role="alert">
+                                                                    <span class="invalid-feedback" role="alert" style="background: none;">
                                                                         <strong>{{ $message }}</strong>
                                                                     </span>
                                                                 @enderror
@@ -88,8 +84,8 @@
                                                    <div class="row">
                                                       <div class="col-md-6 mb-4">
                                                           <div class="form-floating mb-2">
+                                                              <label for="Password">Password</label>
                                                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                                                                <label for="Password">Password</label>
                                                                 @error('password')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
@@ -99,36 +95,37 @@
                                                       </div>
                                                       <div class="col-md-6 mb-4">
                                                           <div class="form-floating mb-2">
+                                                              <label for="confirmpassword">Confirm-password</label>
                                                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                                                <label for="confirmpassword">Confirm-password</label>
                                                             </div>
                                                       </div>
                                                    </div>
                                                    <div class="row">
                                                       <div class="col-md-6 mb-4">
                                                           <div class="form-floating mb-2">
+                                                              <label for="address">Address</label>
                                                                 <input id="address" type="text" class="form-control" name="address" required autocomplete="address">
-                                                                <label for="address">Address</label>
 
                                                             </div>
                                                       </div>
                                                       <div class="col-md-6 mb-4">
                                                           <div class="form-floating mb-2">
+                                                              <label for="city">City</label>
                                                                 <input id="city" type="text" class="form-control" name="city" required autocomplete="city">
-                                                                <label for="city">City</label>
                                                             </div>
                                                       </div>
                                                    </div>
                                                    <div class="row">
                                                       <div class="col-md-6 mb-4">
                                                           <div class="form-floating mb-2">
+                                                              <label for="address">Postal Code</label>
                                                                 <input id="postal_code" type="number" class="form-control" name="postal_code" required autocomplete="postal_code">
-                                                                <label for="address">Postal Code</label>
 
                                                             </div>
                                                       </div>
                                                       <div class="col-md-6 mb-4">
                                                           <div class="form-floating mb-2">
+                                                            <label for="country">Country</label>
                                                             <select class="form-control" name="country" id="country">
                                                                 <option label="Choose Country"></option>
                                                                 <option selected>Choose Country</option>
@@ -379,9 +376,7 @@
                                                                 <option value="YE">Yemen</option>
                                                                 <option value="ZM">Zambia</option>
                                                                 <option value="ZW">Zimbabwe</option>
-
                                                             </select>
-                                                                <label for="country">Country</label>
                                                             </div>
                                                       </div>
                                                    </div>

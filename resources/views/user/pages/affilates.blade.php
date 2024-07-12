@@ -13,10 +13,10 @@
                         <div class="col-sm-6 breadcome-heading">
                             <h3>My Affiliate</h3>
                         </div>
-                        
+
                     </div>
 
-                    
+
 
                     <div class="transection-staus mg-t-30  mg-b-30">
                         <div class="container-fluid">
@@ -25,14 +25,14 @@
                                     <div class="transaction-status-wrap">
 
                                         <div class="transaction-table">
-                                            <table id="myTable" class="table table-bordered table-border">
+                                            <table id="myTable" class="">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
                                                        <th scope="col">FULLNAME</th>
                                                         <th scope="col">USERNAME</th>
-             
-             
+
+
                                                         <th scope="col">EMAIL</th>
                                                         <th scope="col">JOINDATE</th>
                                                     </tr>
@@ -42,10 +42,10 @@
                                                     <tr>
                                                        <td >{{$loop->index+1}}</td>
                                                        <td>{{$row->name}}</td>
-             
+
                                                        <td>{{$row->user_name}}</td>
-             
-             
+
+
                                                          <td>{{$row->email}}</td>
                                                          <td>{{$row->created_at}}</td>
                                                     </tr>
@@ -95,6 +95,6 @@
             });
         </script>
 
-   
+
     @endpush
 @endsection

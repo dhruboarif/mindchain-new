@@ -37,13 +37,13 @@
                                             <form method="post" action="{{route('money-store-manual')}}">
                                                 @csrf
                                 <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                                              <div class="form-group">
+                                              <div class="form-group" data-section="4">
                                                 <?php
                           $account_info= App\Models\AccountInfo::where('payment_type_id','!=',2)->get();
 
                            ?>
-                                                <label for="selectUsdtDepositWalletMenu" class="col-form-label">Select Wallet</label>
-                                                <select class="form-select form-control" id="DestinationOptions_usd2" name="payment_wallet_id"  aria-label="Default select example" required onchange="UsdtDepositWalletMenu()">
+                                                <label for="selectWallet4" class="col-form-label">Select Wallet</label>
+                                                <select class="form-select form-control" id="selectWallet4" name="payment_wallet_id"  aria-label="Default select example" required onchange="selectWallet(4)">
                                                   <option selected disabled>choose Wallet</option>
                                                   @foreach($account_info as $payment)
 
@@ -51,12 +51,12 @@
                                                 @endforeach
                                                 </select>
                                               </div>
-                                              <div class="form-group">
-                                                  <label for="usdtDepositAddressMenu" class="col-form-label">Wallet Address</label>
-                                                  <input type="text" class="form-control" name="wallet_id" disabled id="wallet_id_usd2" readonly>
-                                                  <button class="copy-button" onclick="copyUsdtDepositWalletMenu(event)">
-                                                      <i class="fa-solid fa-copy copy-usdt-depo-wall-menu"></i>
-                                                          <i class="fa-solid fa-clipboard clipboard-usdt-depo-wall-menu text-warning"></i>
+                                              <div class="form-group" data-section="4">
+                                                  <label for="copyAddress4" class="col-form-label">Wallet Address</label>
+                                                  <input type="text" class="form-control" name="wallet_id" disabled id="copyAddress4" readonly>
+                                                  <button class="copy-button" onclick="copyWallet(event, 4)">
+                                                      <i class="fa-solid fa-copy copy-icon"></i>
+                                                          <i class="fa-solid fa-clipboard clipboard-icon text-warning"></i>
                                                       </button>
                                                 </div>
                                                 <div class="form-group">
@@ -170,6 +170,6 @@
             });
         </script>
 
-   
+
     @endpush
 @endsection

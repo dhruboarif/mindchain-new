@@ -156,7 +156,7 @@
                                 </div>
                                 <div class="copy-container prof-url">
                                     <p class="cp-url">Invite: <span class="invt text-lowercase" id="urlText">
-                                            {{ Auth::user()->referral_link }}</span></p>
+                                        https://user.mi....m/register?ref={{ Auth::user()->user_name }}</span></p>
                                     <button class="copy-button" onclick="copyURL()">
                                         <i class="fa-solid fa-copy copy-icon"></i>
                                         <i class="fa-solid fa-clipboard clipboard-icon text-warning"></i>
@@ -254,7 +254,7 @@
 
                                         </div>
                                         <div class="coin-img">
-                                            <img src="{{ asset('assetsnew/img/img-icon/MUSD Icon-01.png') }}"
+                                            <img src="{{ asset('assetsnew/img/img-icon/musd-icon.png') }}"
                                                 alt="">
                                         </div>
                                     </div>
@@ -286,7 +286,7 @@
 
                                         </div>
                                         <div class="coin-img">
-                                            <img src="{{ asset('assetsnew/img/img-icon/BMIND Icon-01.png') }}"
+                                            <img src="{{ asset('assetsnew/img/img-icon/bmind-icon-1.png') }}"
                                                 alt="">
                                         </div>
                                     </div>
@@ -430,7 +430,7 @@
                                                         <div class="row d-flex justify-content-between">
                                                             <div class="col-lg-2 col-md-2 col-sm-2">
                                                                 <div class="wallet-single-name d-flex st-com">
-                                                                    <img src="{{ asset('assetsnew/img/img-icon/MUSD Icon-01.png') }}"
+                                                                    <img src="{{ asset('assetsnew/img/img-icon/musd-icon.png') }}"
                                                                         alt="">
                                                                     <p class="text-uppercase text-left">MUSD</p>
                                                                 </div>
@@ -484,7 +484,7 @@
                                                         <div class="row d-flex justify-content-between">
                                                             <div class="col-lg-2 col-md-2 col-sm-2">
                                                                 <div class="wallet-single-name d-flex st-com">
-                                                                    <img src="{{ asset('assetsnew/img/img-icon/BMIND Icon-01.png') }}"
+                                                                    <img src="{{ asset('assetsnew/img/img-icon/bmind-icon.png') }}"
                                                                         alt="">
                                                                     <p class="text-uppercase text-left">bmind</p>
                                                                 </div>
@@ -535,7 +535,7 @@
                                                         <div class="row d-flex justify-content-between">
                                                             <div class="col-lg-2 col-md-2 col-sm-2">
                                                                 <div class="wallet-single-name d-flex st-com">
-                                                                    <img src="{{ asset('assetsnew/img/img-icon/BMIND Icon-01.png') }}"
+                                                                    <img src="{{ asset('assetsnew/img/img-icon/kids-icon.png') }}"
                                                                         alt="">
                                                                     <p class="text-uppercase text-left">Kids P.</p>
                                                                 </div>
@@ -1004,6 +1004,23 @@
                         </div>
                         <!-- BMIND Target END
               ============================================ -->
+
+
+              <!-- twitter section start
+              ============================================ -->
+              <div class="admin-content dbprice analysis-progrebar-ctn res-mg-t-30 bmind-tar" style="border-radius: 10px">
+                <div class="price-title">
+                    <h4 class="text-left text-uppercase"><b>Twitter</b></h4>
+                </div>
+                <div class="row vertical-center-box vertical-center-box-tablet">
+                    <div class="col-lg 12 col-md-12 col-sm col xs">
+                        <a class="twitter-timeline" data-height="560" data-dnt="true" data-theme="dark" href="https://twitter.com/MindChain1?ref_src=twsrc%5Etfw">Tweets by MindChain Ecosystem</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Twitter section END
+  ============================================ -->
                     </div>
                 </div>
 
@@ -1017,7 +1034,7 @@
                                     <div class="transaction-status-wrap">
                                         <h4 class="text-left">Recent Transaction Cash Wallet</h4>
                                         <div class="transaction-table">
-                                            <table id="myTable" class="table table-bordered table-border">
+                                            <table id="myTable" class="">
                                                 <thead>
                                                     <tr>
                                                         <th>SL</th>
