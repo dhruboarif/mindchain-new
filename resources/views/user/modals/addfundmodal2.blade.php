@@ -1,4 +1,4 @@
-<div class="modal withdraw-modal fade" id="addfund2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal deposit-modal fade" id="addfund2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -17,8 +17,8 @@
                     ?>
                     <div class="form-group">
                         <label for="selectMusdDepositAddress" class="col-form-label">Select Wallet</label>
-                        <select class="form-select form-control" name="payment_wallet_id" id="selectMusdDepositAddress"
-                            aria-label="Default select example" onchange="musdDepositWallet()">
+                        <select id="musddeposit" class="form-select form-control" name="payment_wallet_id" 
+                            aria-label="Default select example">
                             <option selected disabled>choose Wallet</option>
                             @foreach ($account_info as $payment)
                                 <option id="{{ $payment->wallet_no }}" value="{{ $payment->wallet_no }}">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-group">
                         <label for="musdDepositAddress" class="col-form-label">Wallet Address</label>
-                        <input type="text" class="form-control" name="wallet_id" id="musdDepositAddress">
+                        <input type="text" class="form-control" name="wallet_id" id="musd_wallet_id">
                         <button class="copy-button" onclick="copyMusdDepositWallet(event)">
                             <i class="fa-solid fa-copy copy-musd-depo-wall"></i>
                             <i class="fa-solid fa-clipboard clipboard-musd-depo-wall text-warning"></i>
@@ -52,3 +52,26 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+
+<script type="text/javascript">
+    
+    //alert('success');
+    //console.log(this.getAttribute('id'));
+    //console.log(e.target.options[e.target.selectedIndex].getAttribute('id'));
+    //var wallet=  document.getElementById("wallet_id");
+    //wallet.innerHTML= id.value;
+    document.getElementById('DestinationOptions').addEventListener('change', function (e) {
+        var wallet2 = e.target.options[e.target.selectedIndex].getAttribute('id');
+        console.log(wallet2);
+        var wallet = document.getElementById("wallet_id").value = wallet2;
+        //console.log(wallet);
+        //wallet.innerHTML= wallet2;
+    });
+
+    //  document.getElementById('').value(id.value);
+
+
+</script>
+@endpush

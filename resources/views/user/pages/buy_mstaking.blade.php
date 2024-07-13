@@ -17,6 +17,25 @@
                </div>
            </div>
 
+           @if(Session::has('package_purchase'))
+            <div class="alert alert-success d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24">
+            <use xlink:href="#check-circle-fill" />
+            </svg>
+            <div>
+            {{Session::get('package_purchase')}}
+            </div>
+            </div>
+             @elseif(Session::has('purchase_error'))
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24">
+            <use xlink:href="#check-circle-fill" />
+            </svg>
+            <div>
+            {{Session::get('purchase_error')}}
+            </div>
+            </div>
+            @endif
                         <!-- Content  section 
 ============================================  -->
                <div class="earn-page-staus mg-t-30  mg-b-30">
@@ -29,7 +48,7 @@
                                        <h4 class="mg-t-15 mg-t-30">Stake to Earn</h4>
                                    </div>
                                    <div class="card-content mg-t-30">
-                                       <form id="stakingForm" class="col-lg-12" method="post" action="{{route('buy-staking')}}">
+                                       <form id="stakingForm" class="col-lg-12" method="post" action="{{route('buy-mstaking')}}">
                                           @csrf
                                           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
 

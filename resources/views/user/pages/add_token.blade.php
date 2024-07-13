@@ -6,7 +6,16 @@
         <div class="row admin">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="admin-content res-mg-t-15 d-flex row justify-content-between">
-
+                    @if (Session::has('Money_added'))
+                        <div class="alert alert-success d-flex align-items-center" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24">
+                                <use xlink:href="#check-circle-fill" />
+                            </svg>
+                            <div>
+                                {{ Session::get('Money_added') }}
+                            </div>
+                        </div>
+                    @endif
 
                     <div class="row page-top-section">
                         <!-- breadcome title Section  -->
@@ -16,67 +25,83 @@
                         <div class="col-sm-6">
                             <div class=" breadcome-price-section">
                                 <p class="breadcome-section-name">Available Balance:</p>
-                                <p class="breadcome-section-price">{{$data['sum_deposit_bonus'] ? number_format((float)$data['sum_deposit_bonus'], 2, '.', '') .' MIND' : '00.00 MIND'}}</p>
+                                <p class="breadcome-section-price">
+                                    {{ $data['sum_deposit_bonus'] ? number_format((float) $data['sum_deposit_bonus'], 2, '.', '') . ' MIND' : '00.00 MIND' }}
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="row page-section-btn">
                         <div class="col-sm-12">
-                            <button type="button" data-toggle="modal" data-target="#usdtDeposit" data-whatever=""  class="page-button">Pay Manually</button>
-                                <div class="modal withdraw-modal fade" id="usdtDeposit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
+                            <button type="button" data-toggle="modal" data-target="#usdtDeposit" data-whatever=""
+                                class="page-button">Pay Manually</button>
+                            <div class="modal withdraw-modal fade" id="usdtDeposit" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
                                         <div class="modal-header">
-                                          <h5 class="modal-title">Deposit Mind</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
+                                            <h5 class="modal-title">Deposit Mind</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="post" action="{{route('token-store-manual')}}">
+                                            <form method="post" action="{{ route('token-store-manual') }}">
                                                 @csrf
-                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                                              <div class="form-group">
-                                        <?php
-                                        $account_info= App\Models\AccountInfo::where('payment_type_id','!=',2)->get();
-
-                                        ?>
-                                                <label for="selectUsdtDepositWalletMenu" class="col-form-label">Select Wallet</label>
-                                                <select class="form-select form-control" id="DestinationOptions_usd2" name="payment_wallet_id"  aria-label="Default select example" required onchange="UsdtDepositWalletMenu()">
-                                                  <option selected disabled>choose Wallet</option>
-                                                  @foreach($account_info as $payment)
-
-                                                <option id="{{$payment->wallet_no}}" value="{{$payment->id}}">{{$payment->payment_way->payment_way}} </option>
-                                                @endforeach
-                                                </select>
-                                              </div>
-                                              <div class="form-group">
-                                                  <label for="usdtDepositAddressMenu" class="col-form-label">Wallet Address</label>
-                                                  <input type="text" class="form-control" name="wallet_id" disabled id="wallet_id_usd2" readonly>
-                                                  <button class="copy-button" onclick="copyUsdtDepositWalletMenu(event)">
-                                                      <i class="fa-solid fa-copy copy-usdt-depo-wall-menu"></i>
-                                                          <i class="fa-solid fa-clipboard clipboard-usdt-depo-wall-menu text-warning"></i>
-                                                      </button>
+                                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                                <div class="form-group">
+                                                    <?php
+                                                    $account_info = App\Models\AccountInfo::where('payment_type_id', '!=', 2)->get();
+                                                    
+                                                    ?>
+                                                    <label for="selectUsdtDepositWalletMenu" class="col-form-label">Select
+                                                        Wallet</label>
+                                                    <select class="form-select form-control" id="DestinationOptions_usd2"
+                                                        name="payment_wallet_id" aria-label="Default select example"
+                                                        required onchange="UsdtDepositWalletMenu()">
+                                                        <option selected disabled>choose Wallet</option>
+                                                        @foreach ($account_info as $payment)
+                                                            <option id="{{ $payment->wallet_no }}"
+                                                                value="{{ $payment->id }}">
+                                                                {{ $payment->payment_way->payment_way }} </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
-                                                  <label for="usdt-amount-deposit" class="col-form-label">Amount (MUSD)</label>
-                                                  <input type="text" class="form-control" name="amount" id="usdt-amount-deposit">
+                                                    <label for="usdtDepositAddressMenu" class="col-form-label">Wallet
+                                                        Address</label>
+                                                    <input type="text" class="form-control" name="wallet_id" disabled
+                                                        id="wallet_id_usd2" readonly>
+                                                    <button class="copy-button" onclick="copyUsdtDepositWalletMenu(event)">
+                                                        <i class="fa-solid fa-copy copy-usdt-depo-wall-menu"></i>
+                                                        <i
+                                                            class="fa-solid fa-clipboard clipboard-usdt-depo-wall-menu text-warning"></i>
+                                                    </button>
                                                 </div>
                                                 <div class="form-group">
-                                                  <label for="usdt-hash-deposit" class="col-form-label">Transaction Hash</label>
-                                                  <input type="text" class="form-control" id="usdt-hash-deposit" name="txn_id">
+                                                    <label for="usdt-amount-deposit" class="col-form-label">Amount
+                                                        (MUSD)</label>
+                                                    <input type="text" class="form-control" name="amount"
+                                                        id="usdt-amount-deposit">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="usdt-hash-deposit" class="col-form-label">Transaction
+                                                        Hash</label>
+                                                    <input type="text" class="form-control" id="usdt-hash-deposit"
+                                                        name="txn_id">
                                                 </div>
                                         </div>
                                         <div class="modal-footer">
-                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                          <button type="submit" class="btn btn-primary">Deposit</button>
+                                            <button type="button" class="btn btn-danger"
+                                                data-dismiss="modal">Cancel</button>
+                                            <button type="submit" class="btn btn-primary">Deposit</button>
                                         </div>
-                                    </form>
+                                        </form>
 
-                                      </div>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
 
@@ -135,7 +160,7 @@
                         </div>
                     </div>
                     <!-- transection Token Wallet section
-        ============================================  -->
+            ============================================  -->
                 </div>
             </div>
         </div>
@@ -169,7 +194,5 @@
                 //wallet.innerHTML= wallet2;
             });
         </script>
-
-   
     @endpush
 @endsection

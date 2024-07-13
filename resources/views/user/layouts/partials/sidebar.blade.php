@@ -103,7 +103,7 @@
                             <span class="mini-click-non text-capitalize sidebar-title">Earn MUSD</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title=""
-                                    href="/home/buy_mstaking/{{ Auth::user()->id }}{{ Auth::user()->id }}"><span
+                                    href="/home/buy_mstaking/{{ Auth::user()->id }}"><span
                                         class="mini-sub-pro">MUSD Staking</span></a></li>
                             <li><a title="" href="/home/mstaking-history/{{ Auth::user()->id }}"><span
                                         class="mini-sub-pro">MUSD Staking History</span></a></li>
@@ -125,7 +125,7 @@
                             <span class="mini-click-non sidebar-titel text-capitalize">become a marchent</span></a>
                     </li>
                     <li class="click-active">
-                        <a class="" href="#" aria-expanded="false"><svg class="icon-wrap"
+                        <a class="" href="/home/coupon/{{Auth::user()->id}}" aria-expanded="false"><svg class="icon-wrap"
                                 width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_5596_76)">

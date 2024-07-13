@@ -127,7 +127,7 @@
                               <button type="submit">Sign In</button>
                         </form>
                         
-                        <p class="mg-t-15">Don't have an account? <a href="signup.html">Sign Up For Free</a></p>
+                        <p class="mg-t-15">Don't have an account? <a href="/register">Sign Up For Free</a></p>
                     </div>
                 </div>
             </div>

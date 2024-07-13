@@ -17,7 +17,7 @@
                      ?>
                     <div class="form-group">
                         <label for="selectMusdDepositAddress" class="col-form-label">Select Wallet</label>
-                        <select class="form-select form-control" name="payment_wallet_id" id="selectMusdDepositAddress"
+                        <select class="form-select form-control" name="payment_wallet_id" id="usdt_deposit"
                             aria-label="Default select example" onchange="musdDepositWallet()">
                             <option selected disabled>choose Wallet</option>
                             @foreach ($account_info as $payment)
@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-group">
                         <label for="musdDepositAddress" class="col-form-label">Wallet Address</label>
-                        <input type="text" class="form-control" name="wallet_id" id="musdDepositAddress">
+                        <input type="text" class="form-control" name="wallet_id" id="usdt_wallet_id">
                         <button class="copy-button" onclick="copyMusdDepositWallet(event)">
                             <i class="fa-solid fa-copy copy-musd-depo-wall"></i>
                             <i class="fa-solid fa-clipboard clipboard-musd-depo-wall text-warning"></i>

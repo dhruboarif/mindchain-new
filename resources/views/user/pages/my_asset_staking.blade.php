@@ -25,67 +25,61 @@
                                     <div class="transaction-status-wrap">
 
                                         <div class="transaction-table">
-                                            <table id="myTable" class="">
+                                            <table id="myTable" class="table table-bordered table-border">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
-                                                       <th scope="col">PACKAGE</th>
-                                                        <th scope="col">PURCHASE
-                                                             DATE</th>
+                                                       <th scope="col">AMOUNT</th>
+                                                        <th scope="col">DAYS
+                                                     </th>
              
              
-                                                        <th scope="col">TOKEN
-                                                          AMOUNT</th>
-                                                        <th scope="col">DAILY
-                                                         BUYER
-                                                         TOKEN</th>
+                                                        <th scope="col">DAILY BONUS
+                                                          </th>
+                                                        
                                                          <th scope="col">RECEIVED DAYS</th>
                                                            <th scope="col">REMAINING DAYS</th>
+                                                            <th scope="col">STAKING DATE</th>
                                                     </tr>
                                                 </thead>
-
-
-                                                @foreach($purchase as $row)
-                                       <tr>
-                                          <td >{{$loop->index+1}}</td>
-                                          <td>{{$row->packages->package_name}}</td>
-
-                                          <td>{{$row->created_at}}</td>
-
-
-                                            <td>{{$row->packages->amount}}</td>
-                                            <td>{{($row->packages->amount)*(($row->packages->daily_buyer_token)/100)}}</td>
-                                            <?php
-                                            $to = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i',$row->created_at);
-                                            $from = \Carbon\Carbon::now();
-
-                                            $diff_in_days = $to->diffInDays($from);
-
-
-                                            //dd($diff_in_days);
-
-
-                                             ?>
-
-
-                                             @if(($row->packages->duration)-($diff_in_days)< 0)
-                                            <td>{{$row->packages->duration}}</td>
-                                            <td>0</td>
-                                            
-                                            @else 
-                                            
-                                            <td>{{$diff_in_days}}</td>
-                                            <td>{{($row->packages->duration)-($diff_in_days)}}</td>
-                                            
-                                            @endif
-
-                                       </tr>
-                                       @endforeach
-
-
-
-
-
+                                                <tbody>
+                                                  @foreach($purchase as $row)
+                                                    <tr>
+                                                       <td >{{$loop->index+1}}</td>
+                                                       <td>{{$row->amount}}</td>
+             
+                                                       <td>{{$row->days}}</td>
+             
+             
+                                                         <td>{{round($row->daily,2)}}</td>
+                                                        
+                                                         <?php
+                                                         $to = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i',$row->created_at);
+                                                         $from = \Carbon\Carbon::now();
+             
+                                                         $diff_in_days = $to->diffInDays($from);
+             
+             
+                                                         //dd($diff_in_days);
+             
+             
+                                                          ?>
+             
+             
+                                                        
+                                                           @if(($row->days)-($diff_in_days)< 0)
+                                                         <td>{{$row->days}}</td>
+                                                         <td>0</td>
+                                                         
+                                                         @else 
+                                                         
+                                                         <td>{{$diff_in_days}}</td>
+                                                         <td>{{($row->days)-($diff_in_days)}}</td>
+                                                         
+                                                         @endif
+                                                         <td>{{$row->created_at}}</td>
+                                                    </tr>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>

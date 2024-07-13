@@ -144,7 +144,9 @@ class FrontendController extends Controller
   public function coupon($id)
   {
       $data['sum_deposit_coupon']=CouponWallet::where('user_id',Auth::id())->sum('amount');
-      $data['coupons']= Coupon::where('created_by',Auth::id())->get();
+      $data['coupons'] = Coupon::where('created_by', Auth::id())
+      ->orderBy('created_at', 'desc')
+      ->get();
       return view('user.pages.coupon',compact('data'));
   
       
